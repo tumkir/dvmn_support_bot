@@ -1,20 +1,18 @@
 # Telegram и VK бот с использованием [dialogflow.com](Dialogflow) для службы поддержки
 
-Бот для телеграм оповещает о проверке заданий на сайте [dvmn.org](https://dvmn.org/)
-
 ## Как подготовить бота к запуску
 
-- Dialogflow
-1. Создайте новый агент на сайте Dialogflow по [инструкции](https://cloud.google.com/dialogflow/docs/quick/build-agent])
-2. Перейдите в настройки, включите **V2 API**, получите и скачайте ключ для полного доступа к API Dialogflow ([инструкция](https://dialogflow.com/docs/reference/v2-auth-setup))
+#### Dialogflow
+  1. Создайте новый агент на сайте Dialogflow по [инструкции](https://cloud.google.com/dialogflow/docs/quick/build-agent])
+  2. Перейдите в настройки, включите **V2 API**, получите и скачайте ключ для полного доступа к API Dialogflow ([инструкция](https://dialogflow.com/docs/reference/v2-auth-setup))
 
-- Telegram бот
+#### Telegram бот
 1. Создайте и получите токен бота через [BotFather](t.me/BotFather) 
 
-- VK бот
-1. (Создайте)[https://vk.com/groups?tab=admin] группу в VK
-2. В настройках группы в разделе *Работа с API* создайте токен с доступом к сообщениям группы
-3. В разделе *Сообщения* включите возможность отправить сообщение в группу
+#### VK бот
+  1. [Создайте](https://vk.com/groups?tab=admin) группу в VK
+  2. В настройках группы в разделе *Работа с API* создайте токен с доступом к сообщениям группы
+  3. В разделе *Сообщения* включите возможность отправить сообщение в группу
 
 
 ## Как запустить на Heroku
