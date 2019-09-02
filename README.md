@@ -63,3 +63,7 @@ heroku logs --app APP_NAME
   ```python3
   python3 tg_bot.py
   ```
+
+## Примеры работающих ботов:
+- [телеграм](https://t-do.ru/tmkr_dvmn_support_bot)
+- [vk](https://vk.com/im?sel=-185889474)
