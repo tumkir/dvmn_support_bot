@@ -4,10 +4,10 @@
 
 #### Dialogflow
   1. Создайте новый агент на сайте Dialogflow по [инструкции](https://cloud.google.com/dialogflow/docs/quick/build-agent])
-  2. Перейдите в настройки, включите **V2 API**, получите и скачайте ключ для полного доступа к API Dialogflow ([инструкция](https://dialogflow.com/docs/reference/v2-auth-setup))
+  2. Перейдите в настройки, включите **V2 API**, получите и скачайте ключ (json файл) для полного доступа к API Dialogflow ([инструкция](https://dialogflow.com/docs/reference/v2-auth-setup))
 
 #### Telegram бот
-1. Создайте и получите токен бота через [BotFather](t.me/BotFather) 
+1. Создайте и получите токен бота через [@botfather](https://t-do.ru/botfather)
 
 #### VK бот
   1. [Создайте](https://vk.com/groups?tab=admin) группу в VK
@@ -21,13 +21,16 @@
 * Форкните данный репозиторий
 
 В разделе **Config Vars** на вкладке **Settings** вашего приложения пропишите:
-- Токен бота. Необходимо создать бота и получить токен у [@botfather](https://t-do.ru/botfather)
-- Ваш chat_id в телеграме. Можно узнать у бота [@userinfobot](https://t-do.ru/userinfobot)
-- [Токен от dvmn](https://dvmn.org/api/docs/)
+- `bot_token` — токен телеграм бота, который вы получили у [@botfather](https://t-do.ru/botfather)
+- `GOOGLE_APPLICATION_CREDENTIALS`=google-credentials.json
+- `GOOGLE_CREDENTIALS` — содержимое файла google-credentials.json
+- `owner_chat_id` — ваш id в телеграме для отправки ботом сервисных сообщений вам. Можно узнать у бота [@userinfobot](https://t-do.ru/userinfobot)
+- `project_id` — название проекта в Dialogflow (написан в настройках агента)
+- `vk_token` — токен от VK
 
 ![config vars](https://raw.githubusercontent.com/tumkir/dvmn_telegram_bot/master/image/config_vars.png)
 
-- Напишите личное сообщение вашему боту, иначе он не сможет отправить сообщение вам.
+- Напишите личное сообщение вашему боту (если ещё не), иначе он не сможет отправить сообщение вам.
 - Привяжите аккаунт GitHub на вкладке **Deploy** вашего приложения на Heroku и выберите нужный репозиторий
 - Нажмите на кнопку **Deploy Branch** (позже можете включите автоматический деплой кнопкой выше)
 - На вкладке **Resources** включите Dynos
