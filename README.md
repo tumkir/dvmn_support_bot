@@ -28,14 +28,15 @@
 - `project_id` — название проекта в Dialogflow (написан в настройках агента)
 - `vk_token` — токен от VK
 
-![config vars](https://raw.githubusercontent.com/tumkir/dvmn_telegram_bot/master/image/config_vars.png)
+Подтяните ключи из переменной `GOOGLE_CREDENTIALS` вот по этой [инструкции](https://stackoverflow.com/a/56818296/640260)
+
+![config vars](https://raw.githubusercontent.com/tumkir/dvmn_support_bot/master/image/heroku_config_vars.png)
+
 
 - Напишите личное сообщение вашему боту (если ещё не), иначе он не сможет отправить сообщение вам.
 - Привяжите аккаунт GitHub на вкладке **Deploy** вашего приложения на Heroku и выберите нужный репозиторий
 - Нажмите на кнопку **Deploy Branch** (позже можете включите автоматический деплой кнопкой выше)
-- На вкладке **Resources** включите Dynos
-
-![dynos](https://raw.githubusercontent.com/tumkir/dvmn_telegram_bot/master/image/dynos.png)
+- На вкладке **Resources** включите оба Dynos
 
 Бот должен успешно запуститься и написать об этом вам в телеграм.
 
@@ -44,3 +45,19 @@
 ```bash
 heroku logs --app APP_NAME
 ```
+
+## Как запустить на локальной машине
+  1. В папке с ботом создайте `.env` файл и пропишите туда:
+  - `bot_token` — токен телеграм бота, который вы получили у [@botfather](https://t-do.ru/botfather)
+  - `GOOGLE_APPLICATION_CREDENTIALS`=путь до файла google-credentials.json (который вы скачали)
+  - `owner_chat_id` — ваш id в телеграме для отправки ботом сервисных сообщений вам. Можно узнать у бота [@userinfobot](https://t-do.ru/userinfobot)
+  - `project_id` — название проекта в Dialogflow (написан в настройках агента)
+  - `vk_token` — токен от VK
+  2. Установите зависимости:
+  ```bash
+  pip3 install -r requirements.txt
+  ```
+  3. Запустите бота:
+  ```python3
+  python3 tg_bot.py
+  ```
