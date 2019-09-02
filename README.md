@@ -3,16 +3,16 @@
 ## Как подготовить бота к запуску
 
 #### Dialogflow
-  1. Создайте новый агент на сайте Dialogflow по [инструкции](https://cloud.google.com/dialogflow/docs/quick/build-agent])
-  2. Перейдите в настройки, включите **V2 API**, получите и скачайте ключ (json файл) для полного доступа к API Dialogflow ([инструкция](https://dialogflow.com/docs/reference/v2-auth-setup))
+* Создайте новый агент на сайте Dialogflow по [инструкции](https://cloud.google.com/dialogflow/docs/quick/build-agent])
+* Перейдите в настройки, включите **V2 API**, получите и скачайте ключ (json файл) для полного доступа к API Dialogflow ([инструкция](https://dialogflow.com/docs/reference/v2-auth-setup))
 
 #### Telegram бот
-1. Создайте и получите токен бота через [@botfather](https://t-do.ru/botfather)
+* Создайте и получите токен бота через [@botfather](https://t-do.ru/botfather)
 
 #### VK бот
-  1. [Создайте](https://vk.com/groups?tab=admin) группу в VK
-  2. В настройках группы в разделе *Работа с API* создайте токен с доступом к сообщениям группы
-  3. В разделе *Сообщения* включите возможность отправить сообщение в группу
+* [Создайте](https://vk.com/groups?tab=admin) группу в VK
+* В настройках группы в разделе *Работа с API* создайте токен с доступом к сообщениям группы
+* В разделе *Сообщения* включите возможность отправить сообщение в группу
 
 
 ## Как запустить на Heroku
@@ -49,7 +49,7 @@ heroku logs --app APP_NAME
 ## Как запустить на локальной машине
   1. В папке с ботом создайте `.env` файл и пропишите туда:
   - `bot_token` — токен телеграм бота, который вы получили у [@botfather](https://t-do.ru/botfather)
-  - `GOOGLE_APPLICATION_CREDENTIALS`=путь до файла google-credentials.json (который вы скачали)
+  - `GOOGLE_APPLICATION_CREDENTIALS` — путь до файла google-credentials.json (который вы скачали)
   - `owner_chat_id` — ваш id в телеграме для отправки ботом сервисных сообщений вам. Можно узнать у бота [@userinfobot](https://t-do.ru/userinfobot)
   - `project_id` — название проекта в Dialogflow (написан в настройках агента)
   - `vk_token` — токен от VK
