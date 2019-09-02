@@ -1,5 +1,7 @@
 # Telegram и VK бот с использованием [dialogflow.com](Dialogflow) для службы поддержки
 
+[демонстрация работы](https://raw.githubusercontent.com/tumkir/dvmn_support_bot/master/image/git_to_git.gif)
+
 ## Как подготовить бота к запуску
 
 #### Dialogflow
