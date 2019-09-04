@@ -29,7 +29,7 @@ def create_intent(intent_name, training_phrases_parts, message_texts, project_id
 
 if __name__ == "__main__":
     load_dotenv()
-    project_id = os.getenv('project_id')
+    project_id = os.getenv('PROJECT_ID')
 
     with open('./questions.json') as questions_file:
         phrases = json.load(questions_file)

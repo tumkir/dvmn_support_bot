@@ -23,12 +23,12 @@
 * Форкните данный репозиторий
 
 В разделе **Config Vars** на вкладке **Settings** вашего приложения пропишите:
-- `bot_token` — токен телеграм бота, который вы получили у [@botfather](https://t-do.ru/botfather)
+- `BOT_TOKEN` — токен телеграм бота, который вы получили у [@botfather](https://t-do.ru/botfather)
 - `GOOGLE_APPLICATION_CREDENTIALS`=google-credentials.json
 - `GOOGLE_CREDENTIALS` — содержимое файла google-credentials.json
-- `owner_chat_id` — ваш id в телеграме для отправки ботом сервисных сообщений вам. Можно узнать у бота [@userinfobot](https://t-do.ru/userinfobot)
-- `project_id` — название проекта в Dialogflow (написан в настройках агента)
-- `vk_token` — токен от VK
+- `OWNER_CHAT_ID` — ваш id в телеграме для отправки ботом сервисных сообщений вам. Можно узнать у бота [@userinfobot](https://t-do.ru/userinfobot)
+- `PROJECT_ID` — название проекта в Dialogflow (написан в настройках агента)
+- `VK_TOKEN` — токен от VK
 
 Подтяните ключи из переменной `GOOGLE_CREDENTIALS` вот по этой [инструкции](https://stackoverflow.com/a/56818296/640260)
 
@@ -50,11 +50,11 @@ heroku logs --app APP_NAME
 
 ## Как запустить на локальной машине
   1. В папке с ботом создайте `.env` файл и пропишите туда:
-  - `bot_token` — токен телеграм бота, который вы получили у [@botfather](https://t-do.ru/botfather)
+  - `BOT_TOKEN` — токен телеграм бота, который вы получили у [@botfather](https://t-do.ru/botfather)
   - `GOOGLE_APPLICATION_CREDENTIALS` — путь до файла google-credentials.json (который вы скачали)
-  - `owner_chat_id` — ваш id в телеграме для отправки ботом сервисных сообщений вам. Можно узнать у бота [@userinfobot](https://t-do.ru/userinfobot)
-  - `project_id` — название проекта в Dialogflow (написан в настройках агента)
-  - `vk_token` — токен от VK
+  - `OWNER_CHAT_ID` — ваш id в телеграме для отправки ботом сервисных сообщений вам. Можно узнать у бота [@userinfobot](https://t-do.ru/userinfobot)
+  - `PROJECT_ID` — название проекта в Dialogflow (написан в настройках агента)
+  - `VK_TOKEN` — токен от VK
   2. Установите зависимости:
   ```bash
   pip3 install -r requirements.txt

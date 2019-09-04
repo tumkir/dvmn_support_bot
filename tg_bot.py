@@ -14,7 +14,7 @@ def start(bot, update):
 def send_answer(bot, update):
     chat_id = update.message.chat_id
     message = update.message.text
-    project_id = os.getenv('project_id')
+    project_id = os.getenv('PROJECT_ID')
     try:
         dialogflow_response = detect_intent_texts(chat_id, message, project_id)
         update.message.reply_text(dialogflow_response)
@@ -23,7 +23,7 @@ def send_answer(bot, update):
 
 
 def main():
-    bot_token = os.getenv('bot_token')
+    bot_token = os.getenv('BOT_TOKEN')
     updater = Updater(bot_token)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('start', start))
@@ -34,5 +34,5 @@ def main():
 
 if __name__ == "__main__":
     load_dotenv()
-    logger = start_logger(Bot(os.getenv('bot_token')), os.getenv('owner_chat_id'))
+    logger = start_logger(Bot(os.getenv('BOT_TOKEN')), os.getenv('OWNER_CHAT_ID'))
     main()

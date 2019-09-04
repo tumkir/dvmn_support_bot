@@ -21,8 +21,8 @@ def send_answer(event, vk_api):
 
 if __name__ == "__main__":
     load_dotenv()
-    vk_token = os.getenv('vk_token')
-    project_id = os.getenv('project_id')
+    vk_token = os.getenv('VK_TOKEN')
+    project_id = os.getenv('PROJECT_ID')
     vk_session = vk_api.VkApi(token=vk_token)
     vk_api = vk_session.get_api()
     longpoll = VkLongPoll(vk_session)
