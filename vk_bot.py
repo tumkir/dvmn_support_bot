@@ -9,9 +9,7 @@ from vk_api.longpoll import VkEventType, VkLongPoll
 
 def send_answer(event, vk_api):
     dialogflow_response = detect_intent_texts(event.user_id, event.text, project_id)
-    if dialogflow_response.query_result.intent.is_fallback:
-        pass
-    else:
+    if dialogflow_response.query_result.intent.is_fallback is not True:
         vk_api.messages.send(
             user_id=event.user_id,
             message=dialogflow_response.query_result.fulfillment_text,
