@@ -17,7 +17,7 @@ def send_answer(bot, update):
     project_id = os.getenv('PROJECT_ID')
     try:
         dialogflow_response = detect_intent_texts(chat_id, message, project_id)
-        update.message.reply_text(dialogflow_response)
+        update.message.reply_text(dialogflow_response.query_result.fulfillment_text)
     except Exception:
         logger.warning('Невозможно обратиться к dialogflow')
 

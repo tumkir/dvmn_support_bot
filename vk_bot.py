@@ -9,12 +9,12 @@ from vk_api.longpoll import VkEventType, VkLongPoll
 
 def send_answer(event, vk_api):
     dialogflow_response = detect_intent_texts(event.user_id, event.text, project_id)
-    if dialogflow_response == 'Не совсем понимаю, о чём ты.':
+    if dialogflow_response.query_result.intent.is_fallback:
         pass
     else:
         vk_api.messages.send(
             user_id=event.user_id,
-            message=dialogflow_response,
+            message=dialogflow_response.query_result.fulfillment_text,
             random_id=randint(1, 1000)
         )
 
