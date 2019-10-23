@@ -16,7 +16,7 @@ def send_answer(event, vk_api):
         dialogflow_response = detect_intent_texts(event.user_id, event.text, project_id)
     except Exception:
         logger.warning("Невозможно обратиться к dialogflow по запросу из ВК")
-    if dialogflow_response.query_result.intent.is_fallback is not True:
+    if not dialogflow_response.query_result.intent.is_fallback:
         vk_api.messages.send(
             user_id=event.user_id,
             message=dialogflow_response.query_result.fulfillment_text,
