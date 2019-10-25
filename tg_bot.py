@@ -1,10 +1,11 @@
 import logging
 import os
 
+from dialogflow import detect_intent_texts
 from dotenv import load_dotenv
+from google.auth import exceptions as google_exceptions
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 
-from dialogflow import detect_intent_texts
 from tg_logging import MyLogsHandler
 
 
@@ -19,8 +20,8 @@ def send_answer(bot, update):
     try:
         dialogflow_response = detect_intent_texts(chat_id, message, project_id)
         update.message.reply_text(dialogflow_response.query_result.fulfillment_text)
-    except Exception:
-        logger.warning("Невозможно обратиться к dialogflow по запросу из Телеграма")
+    except google_exceptions.DefaultCredentialsError:
+        logger.exception('Не удалось подключиться в dialogflow по запросу из телеграма (скорее всего неверно указан путь к json-файлу в .env)')
 
 
 def main():
