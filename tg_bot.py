@@ -9,11 +9,11 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 from tg_logging import MyLogsHandler
 
 
-def start(bot, update):
+def start(update, context):
     update.message.reply_text("Здравствуйте")
 
 
-def send_answer(bot, update):
+def send_answer(update, context):
     chat_id = update.message.chat_id
     message = update.message.text
     project_id = os.getenv("PROJECT_ID")
@@ -26,7 +26,7 @@ def send_answer(bot, update):
 
 def main():
     bot_token = os.getenv("BOT_TOKEN")
-    updater = Updater(bot_token)
+    updater = Updater(bot_token, use_context=True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(MessageHandler(Filters.text, send_answer))
